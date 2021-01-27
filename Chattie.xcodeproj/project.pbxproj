@@ -10,11 +10,12 @@
 		1FBB16DFBF9CA565118759C8 /* Pods_Chattie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DECB7190FA7AEF7BE99F92D /* Pods_Chattie.framework */; };
 		92855B3525C1BC56007A5C6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92855B3425C1BC56007A5C6E /* AppDelegate.swift */; };
 		92855B3725C1BC56007A5C6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92855B3625C1BC56007A5C6E /* SceneDelegate.swift */; };
-		92855B3925C1BC56007A5C6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92855B3825C1BC56007A5C6E /* ViewController.swift */; };
 		92855B3C25C1BC56007A5C6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92855B3A25C1BC56007A5C6E /* Main.storyboard */; };
 		92855B3E25C1BC58007A5C6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92855B3D25C1BC58007A5C6E /* Assets.xcassets */; };
 		92855B4125C1BC58007A5C6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92855B3F25C1BC58007A5C6E /* LaunchScreen.storyboard */; };
 		92855B4C25C1C603007A5C6E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92855B4B25C1C603007A5C6E /* SWRevealViewController.m */; };
+		92855B5225C1E6AD007A5C6E /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92855B5125C1E6AD007A5C6E /* ChatVC.swift */; };
+		92855B5425C1E6BD007A5C6E /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92855B5325C1E6BD007A5C6E /* ChannelVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +24,6 @@
 		92855B3125C1BC56007A5C6E /* Chattie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chattie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92855B3425C1BC56007A5C6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92855B3625C1BC56007A5C6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		92855B3825C1BC56007A5C6E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		92855B3B25C1BC56007A5C6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92855B3D25C1BC58007A5C6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92855B4025C1BC58007A5C6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -31,6 +31,8 @@
 		92855B4925C1C601007A5C6E /* Chattie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Chattie-Bridging-Header.h"; sourceTree = "<group>"; };
 		92855B4A25C1C603007A5C6E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		92855B4B25C1C603007A5C6E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		92855B5125C1E6AD007A5C6E /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		92855B5325C1E6BD007A5C6E /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		A1C0C3004C5EFD4C0C77946E /* Pods-Chattie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chattie.debug.xcconfig"; path = "Target Support Files/Pods-Chattie/Pods-Chattie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +60,9 @@
 		92855B2825C1BC56007A5C6E = {
 			isa = PBXGroup;
 			children = (
+				92855B5025C1E5F8007A5C6E /* Views */,
+				92855B4E25C1E5E8007A5C6E /* Models */,
+				92855B4D25C1E5DF007A5C6E /* Controllers */,
 				92855B4825C1C5D0007A5C6E /* Supporting Files */,
 				92855B3325C1BC56007A5C6E /* Chattie */,
 				92855B3225C1BC56007A5C6E /* Products */,
@@ -79,7 +84,6 @@
 			children = (
 				92855B3425C1BC56007A5C6E /* AppDelegate.swift */,
 				92855B3625C1BC56007A5C6E /* SceneDelegate.swift */,
-				92855B3825C1BC56007A5C6E /* ViewController.swift */,
 				92855B3A25C1BC56007A5C6E /* Main.storyboard */,
 				92855B3D25C1BC58007A5C6E /* Assets.xcassets */,
 				92855B3F25C1BC58007A5C6E /* LaunchScreen.storyboard */,
@@ -96,6 +100,29 @@
 				92855B4925C1C601007A5C6E /* Chattie-Bridging-Header.h */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		92855B4D25C1E5DF007A5C6E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				92855B5125C1E6AD007A5C6E /* ChatVC.swift */,
+				92855B5325C1E6BD007A5C6E /* ChannelVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		92855B4E25C1E5E8007A5C6E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		92855B5025C1E5F8007A5C6E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D325E95A379FDD32F42C2F3C /* Frameworks */ = {
@@ -222,10 +249,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92855B3925C1BC56007A5C6E /* ViewController.swift in Sources */,
+				92855B5225C1E6AD007A5C6E /* ChatVC.swift in Sources */,
 				92855B3525C1BC56007A5C6E /* AppDelegate.swift in Sources */,
 				92855B3725C1BC56007A5C6E /* SceneDelegate.swift in Sources */,
 				92855B4C25C1C603007A5C6E /* SWRevealViewController.m in Sources */,
+				92855B5425C1E6BD007A5C6E /* ChannelVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

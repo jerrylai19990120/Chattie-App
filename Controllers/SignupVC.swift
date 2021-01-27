@@ -1,5 +1,5 @@
 //
-//  LoginVC.swift
+//  SignupVC.swift
 //  Chattie
 //
 //  Created by Jerry Lai on 2021-01-27.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class SignupVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,14 +16,11 @@ class LoginVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func closeBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: UNWIND, sender: nil)
+    }
+    
 
     
-    @IBAction func closeBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func signupBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: TO_SIGNUP, sender: nil)
-    }
-    
+
 }

@@ -49,7 +49,7 @@ class AuthService {
     func registerUser(email: String, password: String, completion: @escaping CompletionHandler){
         let lowerCaseEmail = email.lowercased()
         
-        let header = [
+        let header: HTTPHeaders = [
             "Content-type": "application/json; charset=utf-8"
         ]
         
@@ -58,7 +58,15 @@ class AuthService {
             "password": password
         ]
         
-        
+        AF.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseString{
+            response in
+            if response.value != nil{
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.value as? String)
+            }
+        }
         
     }
     

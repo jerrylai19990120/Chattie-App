@@ -31,12 +31,20 @@ let BASE_URL = "https://chattie-server.herokuapp.com/v1/"
 let URL_REGISTER = "\(BASE_URL)account/register"
 let URL_LOGIN = "\(BASE_URL)account/login"
 let URL_USER_ADD = "\(BASE_URL)user/add"
+let URL_USER_BY_EMAIL = "\(BASE_URL)user/byEmail/"
 
 //Header
 let HEADER: HTTPHeaders = [
     "Content-type": "application/json; charset=utf-8"
 ]
 
+let BEARER_HEADER: HTTPHeaders = [
+    "Authorization": "Bearer \(AuthService.instance.authToken)",
+    "Content-type": "application/json; charset=utf-8"
+]
+
 
 //Notification constants
 let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
+
+

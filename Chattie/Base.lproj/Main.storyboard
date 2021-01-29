@@ -217,6 +217,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginPressed:" destination="sOg-cf-Cxq" eventType="touchUpInside" id="bGr-Oq-vK9"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="ztg-Rv-5tE">
                                 <rect key="frame" x="77" y="276" width="260" height="95"/>
@@ -273,15 +276,21 @@
                                     <action selector="signupBtnPressed:" destination="sOg-cf-Cxq" eventType="touchUpInside" id="fMy-xr-xNp"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Kcg-hd-YIF">
+                                <rect key="frame" x="188.5" y="329.5" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Kcg-hd-YIF" firstAttribute="centerY" secondItem="eGe-B1-I24" secondAttribute="centerY" constant="-100" id="057-oA-hck"/>
                             <constraint firstItem="ti4-0J-hR4" firstAttribute="top" secondItem="ztg-Rv-5tE" secondAttribute="bottom" constant="46" id="Ap6-OD-xrf"/>
                             <constraint firstItem="ztg-Rv-5tE" firstAttribute="top" secondItem="V54-Ei-17Z" secondAttribute="bottom" constant="63" id="FHr-hD-oKn"/>
                             <constraint firstItem="Lbh-gj-tGI" firstAttribute="top" secondItem="ti4-0J-hR4" secondAttribute="bottom" id="M2x-7k-Ufc"/>
                             <constraint firstItem="XeY-qg-nrj" firstAttribute="top" secondItem="Ath-Na-iEm" secondAttribute="top" constant="14" id="MaR-Yx-ahb"/>
                             <constraint firstItem="V54-Ei-17Z" firstAttribute="top" secondItem="Ath-Na-iEm" secondAttribute="top" constant="78" id="Puu-Sa-QH8"/>
                             <constraint firstItem="ztg-Rv-5tE" firstAttribute="centerX" secondItem="eGe-B1-I24" secondAttribute="centerX" id="WzC-0n-8JB"/>
+                            <constraint firstItem="Kcg-hd-YIF" firstAttribute="centerX" secondItem="eGe-B1-I24" secondAttribute="centerX" id="dce-Sd-2QY"/>
                             <constraint firstItem="V54-Ei-17Z" firstAttribute="centerX" secondItem="eGe-B1-I24" secondAttribute="centerX" id="gIK-vP-yKI"/>
                             <constraint firstItem="ti4-0J-hR4" firstAttribute="centerX" secondItem="eGe-B1-I24" secondAttribute="centerX" id="kXx-2E-xzf"/>
                             <constraint firstItem="Ath-Na-iEm" firstAttribute="trailing" secondItem="XeY-qg-nrj" secondAttribute="trailing" constant="43" id="pOP-V0-IsF"/>
@@ -291,6 +300,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="AlC-ys-Nbb"/>
                     <connections>
+                        <outlet property="passwordTxt" destination="doT-Id-CAv" id="Pgt-bb-eAi"/>
+                        <outlet property="spinner" destination="Kcg-hd-YIF" id="Js6-rm-BkK"/>
+                        <outlet property="usernameTxt" destination="WJW-Zh-KdE" id="IHr-zJ-kH6"/>
                         <segue destination="RoS-U9-Nn3" kind="presentation" identifier="toSignup" modalPresentationStyle="fullScreen" id="t5w-dG-o5l"/>
                     </connections>
                 </viewController>

@@ -102,9 +102,9 @@ class SignupVC: UIViewController {
         
          passwordTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [.foregroundColor: chattiePurplePlaceHolder])
         
-        let tap = UIGestureRecognizer(target: self, action: #selector(SignupVC.handleTap))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(SignupVC.handleTap))
         
-        //view.addGestureRecognizer(tap)
+        view.addGestureRecognizer(tap)
     }
     
     @objc func handleTap(){

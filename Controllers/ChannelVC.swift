@@ -23,13 +23,26 @@ class ChannelVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
     }
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        setUpUserInfo()
+    }
     
     @IBAction func loginBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: TO_LOGIN, sender: nil)
+        if AuthService.instance.isLoggedIn {
+            let profile = ProfileVC()
+            profile.modalPresentationStyle = .custom
+            present(profile, animated: true, completion: nil)
+        } else {
+          performSegue(withIdentifier: TO_LOGIN, sender: nil)
+        }
+        
     }
     
     @objc func userDataDidChange(_ notif: Notification){
+        setUpUserInfo()
+    }
+    
+    func setUpUserInfo(){
         if AuthService.instance.isLoggedIn {
             loginBtn.setTitle(UserDataService.instance.name, for: .normal)
             userImg.image = UIImage(named: UserDataService.instance.avatarName)

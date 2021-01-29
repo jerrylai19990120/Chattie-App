@@ -21,6 +21,7 @@
 		92855B5925C1F3B8007A5C6E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92855B5825C1F3B8007A5C6E /* Constants.swift */; };
 		92855B5D25C1F98A007A5C6E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92855B5C25C1F98A007A5C6E /* LoginVC.swift */; };
 		92855B5F25C1FCA3007A5C6E /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92855B5E25C1FCA3007A5C6E /* SignupVC.swift */; };
+		92E17C3F25C386270022E447 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E17C3E25C386270022E447 /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		92855B5825C1F3B8007A5C6E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		92855B5C25C1F98A007A5C6E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		92855B5E25C1FCA3007A5C6E /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		92E17C3E25C386270022E447 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		A1C0C3004C5EFD4C0C77946E /* Pods-Chattie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chattie.debug.xcconfig"; path = "Target Support Files/Pods-Chattie/Pods-Chattie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				92855B5525C1EC82007A5C6E /* GradientView.swift */,
+				92E17C3E25C386270022E447 /* RoundedButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				92855B5F25C1FCA3007A5C6E /* SignupVC.swift in Sources */,
 				92855B5625C1EC82007A5C6E /* GradientView.swift in Sources */,
 				92855B3725C1BC56007A5C6E /* SceneDelegate.swift in Sources */,
+				92E17C3F25C386270022E447 /* RoundedButton.swift in Sources */,
 				92855B5925C1F3B8007A5C6E /* Constants.swift in Sources */,
 				921CF72625C33227004EE472 /* AuthService.swift in Sources */,
 				92855B4C25C1C603007A5C6E /* SWRevealViewController.m in Sources */,

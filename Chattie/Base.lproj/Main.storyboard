@@ -406,7 +406,7 @@
                                     <color key="titleColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="pickAvatarPressed:" destination="RoS-U9-Nn3" eventType="touchUpInside" id="HIV-d5-WJN"/>
+                                    <action selector="pickAvatarPressed:" destination="RoS-U9-Nn3" eventType="touchUpInside" id="Gm2-Xa-jhG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3d-nU-MBz">
@@ -415,7 +415,7 @@
                                     <color key="titleColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="pickBgColorPressed:" destination="RoS-U9-Nn3" eventType="touchUpInside" id="gav-5F-d1w"/>
+                                    <action selector="pickBgPressed:" destination="RoS-U9-Nn3" eventType="touchUpInside" id="TP4-FP-9MH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -444,12 +444,28 @@
                         <outlet property="userImg" destination="MQx-fm-hrt" id="7Oq-AY-D8a"/>
                         <outlet property="usernameTxt" destination="1GF-Jo-iMV" id="Vg3-p0-Scq"/>
                         <segue destination="OoS-6v-hyg" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="KGx-Sg-CgQ"/>
+                        <segue destination="fIY-5R-NXl" kind="presentation" identifier="toAvatarPicker" modalPresentationStyle="fullScreen" id="B6E-jl-DxM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRf-W1-fHb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="OoS-6v-hyg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2398.5507246376815" y="-141.29464285714286"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="H0T-xb-Klm">
+            <objects>
+                <viewController id="fIY-5R-NXl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XZD-vl-K2x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="KMH-Ab-Skj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="94H-BU-JLq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3158" y="-140"/>
         </scene>
     </scenes>
     <resources>

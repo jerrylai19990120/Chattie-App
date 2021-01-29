@@ -45,21 +45,25 @@ class SignupVC: UIViewController {
                 AuthService.instance.loginUser(email: email, password: pass) { (success) in
                     
                     if success {
-                        AuthService.instance.createUser(name: username, email: email, avatarColor: avatarColor, avatarName: avatarName) { (success) in
+                        AuthService.instance.createUser(name: username, email: email, avatarColor: self.avatarColor, avatarName: self.avatarName) { (success) in
                             if success {
                                 self.performSegue(withIdentifier: UNWIND, sender: nil)
                             }
                         }
-                    
+                    }
                 }
             }
         }
     }
     
+    
     @IBAction func pickAvatarPressed(_ sender: Any) {
+        performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
     }
     
-    @IBAction func pickBgColorPressed(_ sender: Any) {
+    
+    @IBAction func pickBgPressed(_ sender: Any) {
     }
+    
     
 }

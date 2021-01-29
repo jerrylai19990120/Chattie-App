@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 
 class AuthService {
@@ -49,25 +50,67 @@ class AuthService {
     func registerUser(email: String, password: String, completion: @escaping CompletionHandler){
         let lowerCaseEmail = email.lowercased()
         
-        let header: HTTPHeaders = [
-            "Content-type": "application/json; charset=utf-8"
+        let body: [String: Any] = [
+            "email": lowerCaseEmail,
+            "password": password
         ]
+        
+        AF.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).validate().responseString{
+            response in
+            
+            if response.value != nil{
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response)
+            }
+        }
+        
+    }
+    
+    func loginUser(email: String, password: String, completion: @escaping CompletionHandler){
+        
+        let lowerCaseEmail = email.lowercased()
         
         let body: [String: Any] = [
             "email": lowerCaseEmail,
             "password": password
         ]
         
-        AF.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseString{
+        AF.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).validate().responseJSON{
             response in
-            if response.value != nil{
-                completion(true)
+            
+            if response.value != nil {
+                
+                /*if let json = response.value as? Dictionary<String, Any> {
+                    if let email = json["user"] as? String {
+                        self.userEmail = email
+                    }
+                    if let token = json["token"] as? String {
+                        self.authToken = token
+                    }
+                    
+                    self.isLoggedIn = true
+                }*/
+                do {
+                    guard let data = response.data else {return}
+                    let json = try JSON(data: data)
+                    self.authToken = json["token"].stringValue
+                    self.userEmail = json["user"].stringValue
+                    
+                    self.isLoggedIn = true
+                    completion(true)
+
+                } catch  {
+                    
+                }
+                
+                
             } else {
                 completion(false)
-                debugPrint(response.value as? String)
+                debugPrint(response)
             }
         }
-        
     }
     
     

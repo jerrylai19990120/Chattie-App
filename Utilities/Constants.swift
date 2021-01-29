@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 typealias CompletionHandler = (_ Success: Bool) -> () 
 
@@ -23,4 +24,10 @@ let USER_EMAIL = "userEmail"
 
 // URL Constants
 let BASE_URL = "https://chattie-server.herokuapp.com/"
-let URL_REGISTER = "\(BASE_URL)account/register"
+let URL_REGISTER = "\(BASE_URL)v1/account/register"
+let URL_LOGIN = "\(BASE_URL)v1/account/login"
+
+//Header
+let HEADER: HTTPHeaders = [
+    "Content-type": "application/json; charset=utf-8"
+]

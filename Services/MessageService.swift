@@ -42,7 +42,7 @@ class MessageService {
                
             } else {
                 completion(false)
-                debugPrint(response.error)
+                debugPrint(response.error as Any)
             }
         }
         

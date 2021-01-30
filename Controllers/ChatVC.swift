@@ -12,18 +12,23 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var sendBtn: UIButton!
     
+    @IBOutlet weak var typingUserLbl: UILabel!
     //Variables
     var isTyping = false
     
     @IBAction func editingChanged(_ sender: Any) {
+        guard let channelId = MessageService.instance.selectedChannel?.id else {return}
         if messageTxtBox.text == ""{
             isTyping = false
             sendBtn.isHidden = true
+            SocketService.instance.socket.emit("stopType", UserDataService.instance.name, channelId)
         } else {
             if isTyping == false {
                 sendBtn.isHidden = false
+                SocketService.instance.socket.emit("startType", UserDataService.instance.name, channelId)
             }
             isTyping = true
+            
         }
     }
     
@@ -77,7 +82,18 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channelSelected(_:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
         
-        SocketService.instance.getChatMessage { (success) in
+        SocketService.instance.getChatMessage { (newMessage) in
+            if newMessage.channelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn {
+                MessageService.instance.messages.append(newMessage)
+                self.tableView.reloadData()
+                
+                if MessageService.instance.messages.count > 0 {
+                    let indexPath = IndexPath(row: MessageService.instance.messages.count-1, section: 0)
+                    self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+                }
+            }
+        }
+        /*SocketService.instance.getChatMessage { (success) in
             if success {
                 self.tableView.reloadData()
                 if MessageService.instance.messages.count>0{
@@ -85,7 +101,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
                 }
             }
-        }
+        }*/
         
         if AuthService.instance.isLoggedIn {
             AuthService.instance.findUserByEmail { (success) in
@@ -94,6 +110,35 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 }
             }
             
+        }
+        
+        SocketService.instance.getTypingUsers { (typingUsers) in
+            guard let channelId = MessageService.instance.selectedChannel?.id else {return}
+            var name = ""
+            var numOfTypers = 0
+            
+            for (typingUser, channel) in typingUsers {
+                if typingUser != UserDataService.instance.name && channel == channelId{
+                    if name == "" {
+                        name = typingUser
+                    } else {
+                        name = "\(name), \(typingUser)"
+                    }
+                    
+                    numOfTypers += 1
+                }
+            }
+            
+            if numOfTypers > 0 && AuthService.instance.isLoggedIn{
+                var verb = "is"
+                if numOfTypers > 1 {
+                    verb = "are"
+                }
+                
+                self.typingUserLbl.text = "\(name) \(verb) typing a message"
+            } else {
+                self.typingUserLbl.text = ""
+            }
         }
         
     }
@@ -144,6 +189,8 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 self.tableView.reloadData()
             }
         }
+        
+        
     }
     
     
@@ -156,6 +203,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 if success {
                     self.messageTxtBox.text = ""
                     self.messageTxtBox.resignFirstResponder()
+                    SocketService.instance.socket.emit("stopType", UserDataService.instance.name, channelId)
                 }
             }
             

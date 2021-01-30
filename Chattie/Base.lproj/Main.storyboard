@@ -141,6 +141,12 @@
                                     <action selector="sendMessagePressed:" destination="fI6-Ou-cYk" eventType="touchUpInside" id="8eY-bY-eSr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1b-JW-9Zj">
+                                <rect key="frame" x="9" y="851" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -149,6 +155,7 @@
                             <constraint firstItem="f3z-G0-vxD" firstAttribute="top" secondItem="bkA-tj-8cC" secondAttribute="bottom" constant="8" id="Cc6-Ok-Hof"/>
                             <constraint firstItem="bkA-tj-8cC" firstAttribute="trailing" secondItem="GLJ-Aa-HXq" secondAttribute="trailing" id="FFk-GA-7nx"/>
                             <constraint firstItem="f3z-G0-vxD" firstAttribute="leading" secondItem="GLJ-Aa-HXq" secondAttribute="leading" id="JVT-UK-a3G"/>
+                            <constraint firstItem="Rkx-CP-LKU" firstAttribute="top" secondItem="F1b-JW-9Zj" secondAttribute="bottom" constant="5" id="Joz-C1-b7I"/>
                             <constraint firstAttribute="bottom" secondItem="Rkx-CP-LKU" secondAttribute="bottom" id="NP5-s1-gsa"/>
                             <constraint firstItem="f3z-G0-vxD" firstAttribute="trailing" secondItem="GLJ-Aa-HXq" secondAttribute="trailing" id="NtR-X2-cq0"/>
                             <constraint firstItem="Rkx-CP-LKU" firstAttribute="leading" secondItem="t64-Ny-Kx1" secondAttribute="leading" id="PTk-lT-ljs"/>
@@ -158,6 +165,7 @@
                             <constraint firstItem="Gn1-L7-MbS" firstAttribute="centerY" secondItem="Rkx-CP-LKU" secondAttribute="centerY" id="g3k-9U-Qcn"/>
                             <constraint firstItem="Rkx-CP-LKU" firstAttribute="top" secondItem="f3z-G0-vxD" secondAttribute="bottom" constant="32" id="hDR-ZE-xYz"/>
                             <constraint firstItem="bkA-tj-8cC" firstAttribute="top" secondItem="t64-Ny-Kx1" secondAttribute="top" id="iwg-2z-Pzr"/>
+                            <constraint firstItem="F1b-JW-9Zj" firstAttribute="leading" secondItem="GLJ-Aa-HXq" secondAttribute="leading" constant="9" id="pKl-Cr-xnZ"/>
                             <constraint firstItem="bkA-tj-8cC" firstAttribute="trailing" secondItem="GLJ-Aa-HXq" secondAttribute="trailing" id="yOn-ZT-fBw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GLJ-Aa-HXq"/>
@@ -168,6 +176,7 @@
                         <outlet property="messageTxtBox" destination="Rkx-CP-LKU" id="cQE-sB-xRQ"/>
                         <outlet property="sendBtn" destination="Gn1-L7-MbS" id="sPG-Lo-uxs"/>
                         <outlet property="tableView" destination="f3z-G0-vxD" id="y9T-nN-wru"/>
+                        <outlet property="typingUserLbl" destination="F1b-JW-9Zj" id="bUd-Ew-bMR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTr-pj-oM2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

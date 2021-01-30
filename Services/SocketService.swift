@@ -55,7 +55,7 @@ class SocketService: NSObject {
         
     }
     
-    func getChatMessage(completion: @escaping CompletionHandler){
+    func getChatMessage(completion: @escaping (_ newMessage: Message)->Void){
         
         socket.on("messageCreated") { (dataArray, ack) in
             guard let msgBody = dataArray[0] as? String else {return}
@@ -70,10 +70,17 @@ class SocketService: NSObject {
                 let newMsg = Message(message: msgBody, userName: userName, channelId: channelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timeStamp: timeStamp)
                 
                 MessageService.instance.messages.append(newMsg)
-                completion(true)
+                completion(newMsg)
             } else {
-                completion(false)
+                completion(Message())
             }
+        }
+    }
+    
+    func getTypingUsers(_ completionHandler: @escaping (_ typingUser: [String:String])-> Void){
+        socket.on("userTypingUpdate") { (dataArray, ack) in
+            guard let typingUsers = dataArray[0] as? [String:String] else {return}
+            completionHandler(typingUsers)
         }
     }
     

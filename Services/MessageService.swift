@@ -16,6 +16,7 @@ class MessageService {
     
     var channels = [Channel]()
     var selectedChannel: Channel?
+    var messages = [Message]()
     
     func findAllChannel(completion: @escaping CompletionHandler){
         channels.append(Channel(channelTitle: "test", channelDescription: "test", id: "01"))
@@ -56,5 +57,43 @@ class MessageService {
         channels.removeAll()
     }
     
+    func clearMessages(){
+        messages.removeAll()
+    }
+    
+    func findAllMessagesForChannel(channelId: String, completion:@escaping CompletionHandler){
+        AF.request("\(URL_GET_MESSAGES)\(channelId)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).validate().responseJSON { (response) in
+            
+            if response.value != nil {
+                self.clearMessages()
+                guard let data = response.data else {return}
+                do {
+                    if let json = try JSON(data: data).array {
+                        for item in json{
+                            let messageBody = item["messageBody"].stringValue
+                            let userName = item["userName"].stringValue
+                            let userAvatar = item["userAvatar"].stringValue
+                            let userAvatarColor = item["userAvatarColor"].stringValue
+                            let id = item["_id"].stringValue
+                            let channelId = item["channelId"].stringValue
+                            let timeStamp = item["timeStamp"].stringValue
+                            
+                            let newMessage = Message(message: messageBody, userName: userName, channelId: channelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timeStamp: timeStamp)
+                            
+                            self.messages.append(newMessage)
+                        }
+                         completion(true)
+                    }
+                } catch {
+                    completion(false)
+                    debugPrint(error)
+                }
+            } else {
+                completion(false)
+                debugPrint(response.error as Any)
+            }
+            
+        }
+    }
     
 }

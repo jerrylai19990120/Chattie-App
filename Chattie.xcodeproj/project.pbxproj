@@ -27,6 +27,10 @@
 		9295930A25C4B3EE003AC8C4 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295930825C4B3EE003AC8C4 /* ProfileVC.swift */; };
 		9295930B25C4B3EE003AC8C4 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9295930925C4B3EE003AC8C4 /* ProfileVC.xib */; };
 		9295930D25C4C617003AC8C4 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295930C25C4C617003AC8C4 /* MessageService.swift */; };
+		9295930F25C4C6B1003AC8C4 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295930E25C4C6B1003AC8C4 /* Channel.swift */; };
+		9295931125C4CA9B003AC8C4 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295931025C4CA9B003AC8C4 /* ChannelCell.swift */; };
+		9295931625C4D097003AC8C4 /* AddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295931425C4D097003AC8C4 /* AddChannelVC.swift */; };
+		9295931725C4D097003AC8C4 /* AddChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9295931525C4D097003AC8C4 /* AddChannelVC.xib */; };
 		92E17C3F25C386270022E447 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E17C3E25C386270022E447 /* RoundedButton.swift */; };
 		92E17C4125C491C20022E447 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E17C4025C491C20022E447 /* UserDataService.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +64,10 @@
 		9295930825C4B3EE003AC8C4 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		9295930925C4B3EE003AC8C4 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		9295930C25C4C617003AC8C4 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
+		9295930E25C4C6B1003AC8C4 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		9295931025C4CA9B003AC8C4 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
+		9295931425C4D097003AC8C4 /* AddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelVC.swift; sourceTree = "<group>"; };
+		9295931525C4D097003AC8C4 /* AddChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelVC.xib; sourceTree = "<group>"; };
 		92E17C3E25C386270022E447 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		92E17C4025C491C20022E447 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		A1C0C3004C5EFD4C0C77946E /* Pods-Chattie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chattie.debug.xcconfig"; path = "Target Support Files/Pods-Chattie/Pods-Chattie.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +161,7 @@
 				92855B5E25C1FCA3007A5C6E /* SignupVC.swift */,
 				929592FE25C49D43003AC8C4 /* AvatarPickerVC.swift */,
 				9295930825C4B3EE003AC8C4 /* ProfileVC.swift */,
+				9295931425C4D097003AC8C4 /* AddChannelVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -160,6 +169,7 @@
 		92855B4E25C1E5E8007A5C6E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9295930E25C4C6B1003AC8C4 /* Channel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,6 +181,7 @@
 				92E17C3E25C386270022E447 /* RoundedButton.swift */,
 				9295930025C49F07003AC8C4 /* AvatarCell.swift */,
 				9295930225C4A674003AC8C4 /* CircleImage.swift */,
+				9295931025C4CA9B003AC8C4 /* ChannelCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				9295930925C4B3EE003AC8C4 /* ProfileVC.xib */,
+				9295931525C4D097003AC8C4 /* AddChannelVC.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -263,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9295931725C4D097003AC8C4 /* AddChannelVC.xib in Resources */,
 				9295930B25C4B3EE003AC8C4 /* ProfileVC.xib in Resources */,
 				92855B4125C1BC58007A5C6E /* LaunchScreen.storyboard in Resources */,
 				92855B3E25C1BC58007A5C6E /* Assets.xcassets in Resources */,
@@ -326,13 +339,16 @@
 				9295930A25C4B3EE003AC8C4 /* ProfileVC.swift in Sources */,
 				92855B5F25C1FCA3007A5C6E /* SignupVC.swift in Sources */,
 				9295930D25C4C617003AC8C4 /* MessageService.swift in Sources */,
+				9295930F25C4C6B1003AC8C4 /* Channel.swift in Sources */,
 				92855B5625C1EC82007A5C6E /* GradientView.swift in Sources */,
 				92855B3725C1BC56007A5C6E /* SceneDelegate.swift in Sources */,
+				9295931125C4CA9B003AC8C4 /* ChannelCell.swift in Sources */,
 				92E17C4125C491C20022E447 /* UserDataService.swift in Sources */,
 				92E17C3F25C386270022E447 /* RoundedButton.swift in Sources */,
 				92855B5925C1F3B8007A5C6E /* Constants.swift in Sources */,
 				921CF72625C33227004EE472 /* AuthService.swift in Sources */,
 				92855B4C25C1C603007A5C6E /* SWRevealViewController.m in Sources */,
+				9295931625C4D097003AC8C4 /* AddChannelVC.swift in Sources */,
 				92855B5425C1E6BD007A5C6E /* ChannelVC.swift in Sources */,
 				929592FF25C49D43003AC8C4 /* AvatarPickerVC.swift in Sources */,
 				9295930325C4A674003AC8C4 /* CircleImage.swift in Sources */,
@@ -482,7 +498,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.3;
+				CURRENT_PROJECT_VERSION = 1.0.4;
 				DEVELOPMENT_TEAM = 8L83CZ8839;
 				INFOPLIST_FILE = Chattie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -505,7 +521,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.3;
+				CURRENT_PROJECT_VERSION = 1.0.4;
 				DEVELOPMENT_TEAM = 8L83CZ8839;
 				INFOPLIST_FILE = Chattie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

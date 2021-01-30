@@ -31,6 +31,7 @@
 		9295931125C4CA9B003AC8C4 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295931025C4CA9B003AC8C4 /* ChannelCell.swift */; };
 		9295931625C4D097003AC8C4 /* AddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295931425C4D097003AC8C4 /* AddChannelVC.swift */; };
 		9295931725C4D097003AC8C4 /* AddChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9295931525C4D097003AC8C4 /* AddChannelVC.xib */; };
+		9295931B25C53509003AC8C4 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9295931A25C53509003AC8C4 /* SocketService.swift */; };
 		92E17C3F25C386270022E447 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E17C3E25C386270022E447 /* RoundedButton.swift */; };
 		92E17C4125C491C20022E447 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E17C4025C491C20022E447 /* UserDataService.swift */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		9295931025C4CA9B003AC8C4 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		9295931425C4D097003AC8C4 /* AddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelVC.swift; sourceTree = "<group>"; };
 		9295931525C4D097003AC8C4 /* AddChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelVC.xib; sourceTree = "<group>"; };
+		9295931A25C53509003AC8C4 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		92E17C3E25C386270022E447 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		92E17C4025C491C20022E447 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		A1C0C3004C5EFD4C0C77946E /* Pods-Chattie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chattie.debug.xcconfig"; path = "Target Support Files/Pods-Chattie/Pods-Chattie.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				921CF72525C33227004EE472 /* AuthService.swift */,
 				92E17C4025C491C20022E447 /* UserDataService.swift */,
 				9295930C25C4C617003AC8C4 /* MessageService.swift */,
+				9295931A25C53509003AC8C4 /* SocketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				92E17C4125C491C20022E447 /* UserDataService.swift in Sources */,
 				92E17C3F25C386270022E447 /* RoundedButton.swift in Sources */,
 				92855B5925C1F3B8007A5C6E /* Constants.swift in Sources */,
+				9295931B25C53509003AC8C4 /* SocketService.swift in Sources */,
 				921CF72625C33227004EE472 /* AuthService.swift in Sources */,
 				92855B4C25C1C603007A5C6E /* SWRevealViewController.m in Sources */,
 				9295931625C4D097003AC8C4 /* AddChannelVC.swift in Sources */,

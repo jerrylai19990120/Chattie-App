@@ -15,8 +15,10 @@ class MessageService {
     static let instance = MessageService()
     
     var channels = [Channel]()
+    var selectedChannel: Channel?
     
     func findAllChannel(completion: @escaping CompletionHandler){
+        channels.append(Channel(channelTitle: "test", channelDescription: "test", id: "01"))
         
         AF.request(URL_GET_CHANNELS, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).validate().responseJSON { (response) in
             
@@ -34,6 +36,8 @@ class MessageService {
                             self.channels.append(channel)
                         }
                         
+                        NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
+                        
                     }
                 } catch {
                     completion(false)
@@ -47,4 +51,10 @@ class MessageService {
         }
         
     }
+    
+    func clearChannels(){
+        channels.removeAll()
+    }
+    
+    
 }

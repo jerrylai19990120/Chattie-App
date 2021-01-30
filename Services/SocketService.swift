@@ -21,9 +21,11 @@ class SocketService: NSObject {
     
     func establishConnection(){
         socket.connect()
+        print(socket.status)
     }
     
     func closeConnection(){
+        print(socket.status)
         socket.disconnect()
     }
     
@@ -33,6 +35,7 @@ class SocketService: NSObject {
     }
     
     func getChannel(completion: @escaping CompletionHandler){
+        
         socket.on("channelCreated") { (dataArray, ack) in
             guard let name = dataArray[0] as? String else {return}
             guard let desc = dataArray[1] as? String else {return}

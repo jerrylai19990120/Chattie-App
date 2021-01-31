@@ -20,7 +20,6 @@ class MessageService {
     var unreadChannels = [String]()
     
     func findAllChannel(completion: @escaping CompletionHandler){
-        channels.append(Channel(channelTitle: "test", channelDescription: "test", id: "01"))
         
         AF.request(URL_GET_CHANNELS, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).validate().responseJSON { (response) in
             

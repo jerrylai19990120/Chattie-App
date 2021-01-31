@@ -13,19 +13,23 @@ class SocketService: NSObject {
     
     static let instance = SocketService()
     
+    var manager: SocketManager
+    var socket: SocketIOClient
+    
     override init() {
-        super.init()
+        //super.init()
+        manager = SocketManager(socketURL: URL(string: BASE_URL)!, config: [.log(true), .compress])
+        socket = manager.defaultSocket
     }
     
-    var socket: SocketIOClient = SocketManager(socketURL: URL(string: BASE_URL)!).defaultSocket
+    
+   
     
     func establishConnection(){
         socket.connect()
-        print(socket.status)
     }
     
     func closeConnection(){
-        print(socket.status)
         socket.disconnect()
     }
     

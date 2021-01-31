@@ -62,7 +62,6 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
         setUpUserInfo()
     }
     
@@ -70,7 +69,7 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBAction func addChannelPressed(_ sender: Any) {
         if AuthService.instance.isLoggedIn {
             let addchannel = AddChannelVC()
-            addchannel.modalPresentationStyle = .fullScreen
+            addchannel.modalPresentationStyle = .custom
             present(addchannel, animated: true, completion: nil)
         }
         

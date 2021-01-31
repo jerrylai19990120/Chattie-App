@@ -83,6 +83,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channelSelected(_:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
         
         SocketService.instance.getChatMessage { (newMessage) in
+            
             if newMessage.channelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn {
                 MessageService.instance.messages.append(newMessage)
                 self.tableView.reloadData()
@@ -141,6 +142,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
         
+        
     }
     
     @objc func handleTap(){
@@ -154,6 +156,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func updateWithChannel(){
         let name = MessageService.instance.selectedChannel?.channelTitle ?? ""
         channelNameLabel.text = "#\(name)"
+        getMessages()
     }
     
     @objc func userDataDidChange(_ notif: Notification){

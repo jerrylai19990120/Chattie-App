@@ -18,7 +18,7 @@ class SocketService: NSObject {
     
     override init() {
         //super.init()
-        manager = SocketManager(socketURL: URL(string: BASE_URL)!, config: [.log(true), .compress])
+        manager = SocketManager(socketURL: URL(string: BASE_URL)!)
         socket = manager.defaultSocket
     }
     
@@ -60,7 +60,7 @@ class SocketService: NSObject {
     }
     
     func getChatMessage(completion: @escaping (_ newMessage: Message)->Void){
-        
+    
         socket.on("messageCreated") { (dataArray, ack) in
             guard let msgBody = dataArray[0] as? String else {return}
             guard let channelId = dataArray[2] as? String else {return}
@@ -70,14 +70,17 @@ class SocketService: NSObject {
             guard let timeStamp = dataArray[7] as? String else {return}
             guard let id = dataArray[6] as? String else {return}
             
-            if channelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn{
+            let newMsg = Message(message: msgBody, userName: userName, channelId: channelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timeStamp: timeStamp)
+            
+            completion(newMsg)
+            
+            /*if channelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn{
                 let newMsg = Message(message: msgBody, userName: userName, channelId: channelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timeStamp: timeStamp)
                 
-                MessageService.instance.messages.append(newMsg)
                 completion(newMsg)
             } else {
                 completion(Message())
-            }
+            }*/
         }
     }
     

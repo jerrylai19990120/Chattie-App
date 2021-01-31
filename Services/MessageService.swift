@@ -38,6 +38,7 @@ class MessageService {
                         }
                         
                         NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
+                        completion(true)
                         
                     }
                 } catch {
@@ -62,6 +63,7 @@ class MessageService {
     }
     
     func findAllMessagesForChannel(channelId: String, completion:@escaping CompletionHandler){
+        
         AF.request("\(URL_GET_MESSAGES)\(channelId)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).validate().responseJSON { (response) in
             
             if response.value != nil {
